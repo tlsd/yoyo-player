@@ -148,7 +148,7 @@ class _YoYoPlayerState extends State<YoYoPlayer>
 
     widgetsBinding.addPostFrameCallback((callback) {
       widgetsBinding.addPersistentFrameCallback((callback) {
-        if (context == null) return;
+        if (!mounted) return;
         var orientation = MediaQuery.of(context).orientation;
         bool? _fullscreen;
         if (orientation == Orientation.landscape) {
